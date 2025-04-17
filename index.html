@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #fff;
+        }
+        .header-bg {
+            background: linear-gradient(to right, #a8d5ba, #f7cac9, #f4a7b9);
+            height: 200px;
+        }
+        .glassmorphic {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+            height: 150px;
+        }
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .project-card > * {
+            position: relative;
+            z-index: 2;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+        p, a, input, button {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <header class="header-bg relative">
+        <div class="container mx-auto px-4 py-6">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800">Your Name's Data Portfolio</h1>
+            <nav class="flex space-x-4 mt-4 text-gray-700">
+                <a href="#projects" class="hover:text-blue-500"><i class="fas fa-tools"></i> Projects</a>
+                <a href="#reports" class="hover:text-blue-500"><i class="fas fa-file-alt"></i> Reports</a>
+                <a href="#dashboards" class="hover:text-blue-500"><i class="fas fa-tachometer-alt"></i> Dashboards</a>
+                <a href="#visualizations" class="hover:text-blue-500"><i class="fas fa-chart-bar"></i> Visualizations</a>
+                <a href="#cv" class="hover:text-blue-500"><i class="fas fa-file-alt"></i> CV</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container mx-auto px-4 py-12">
+        <div class="flex flex-col items-center text-center">
+            <div class="w-40 h-40 rounded-full mb-6 flex items-center justify-center text-gray-600">
+                <i class="fas fa-user fa-3x"></i>
+            </div>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Welcome to my portfolio!</h2>
+            <p class="text-lg max-w-lg">
+                I am a dedicated and passionate data analyst with a knack for uncovering hidden patterns and valuable insights. With my technical expertise, analytical mindset, and strong communication skills, I am poised to make a significant impact in the field of data analysis. Thank you for taking the time to learn more about me. I look forward to connecting and collaborating on exciting data-driven projects in the future!
+            </p>
+        </div>
+        <section id="projects" class="mt-12">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-8 text-center">Projects</h2>
+            <div class="flex flex-col space-y-6">
+                <a href="https://github.com/yourusername/weathersense" target="_blank" class="project-card glassmorphic rounded-lg p-4 cursor-pointer fade-in" style="background-image: url('https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                    <h3 class="text-xl font-bold text-white">WeatherSense System</h3>
+                    <p class="text-gray-200">Real-time weather data pipeline with OpenWeatherMap API, PostgreSQL storage, Pandas EDA, and Tableau dashboard. Planned ML for alerts.</p>
+                </a>
+                <a href="https://github.com/yourusername/emotionsense" target="_blank" class="project-card glassmorphic rounded-lg p-4 cursor-pointer fade-in" style="background-image: url('https://images.unsplash.com/photo-1516321310764-8d9c6340d4d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                    <h3 class="text-xl font-bold text-white">EmotionSense Bot</h3>
+                    <p class="text-gray-200">Python AI bot for text emotion detection with 75%+ accuracy, using modifier logic for mixed sentiments.</p>
+                </a>
+                <a href="https://github.com/yourusername/sqltableau" target="_blank" class="project-card glassmorphic rounded-lg p-4 cursor-pointer fade-in" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                    <h3 class="text-xl font-bold text-white">SQL & Tableau Dashboard</h3>
+                    <p class="text-gray-200">Analyzed e-commerce data with SQL, visualized in an interactive Tableau dashboard.</p>
+                </a>
+            </div>
+        </section>
+        <section id="socials" class="mt-12 text-center">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Socials</h2>
+            <div class="flex justify-center space-x-4">
+                <a href="mailto:your.email@example.com" class="glassmorphic px-4 py-2 rounded-lg hover:bg-blue-500"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="glassmorphic px-4 py-2 rounded-lg hover:bg-blue-500"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://twitter.com/yourhandle" target="_blank" class="glassmorphic px-4 py-2 rounded-lg hover:bg-blue-500"><i class="fab fa-twitter"></i> Twitter</a>
+            </div>
+        </section>
+    </div>
+    <script>
+        function handleSubmit() {
+            alert("Thank you for your message! I'll get back to you soon.");
+            document.querySelector('.contact-form').reset();
+        }
+    </script>
+</body>
+</html>
