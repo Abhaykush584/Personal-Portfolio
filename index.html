@@ -1,123 +1,151 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background: #fff;
-        }
-        .header-bg {
-            background: linear-gradient(to right, #a8d5ba, #f7cac9, #f4a7b9);
-            height: 200px;
-        }
-        .glassmorphic {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-        }
-        .project-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            overflow: hidden;
-            height: 150px;
-        }
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-        .project-card > * {
-            position: relative;
-            z-index: 2;
-        }
-        .project-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-        }
-        .fade-in {
-            animation: fadeIn 1s ease-in;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-        h1, h2, h3 {
-            font-family: 'Poppins', sans-serif;
-        }
-        p, a, input, button {
-            font-family: 'Inter', sans-serif;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="text-gray-800">
-    <header class="header-bg relative">
-        <div class="container mx-auto px-4 py-6">
-            <h1 class="text-3xl md:text-4xl font-bold text-gray-800">Your Name's Data Portfolio</h1>
-            <nav class="flex space-x-4 mt-4 text-gray-700">
-                <a href="#projects" class="hover:text-blue-500"><i class="fas fa-tools"></i> Projects</a>
-                <a href="https://github.com/Abhaykush584/Projects-Report" target="_blank" class="hover:text-blue-500"><i class="fas fa-file-alt"></i> Reports </a>
-                <a href="https://github.com/Abhaykush584/Projects-Dashboards" target="_blank"class="hover:text-blue-500"><i class="fas fa-tachometer-alt"></i> Dashboards</a>
-                <a href="#visualizations" class="hover:text-blue-500"><i class="fas fa-chart-bar"></i> Visualizations</a>
-                <a href="#cv" class="hover:text-blue-500"><i class="fas fa-file-alt"></i> CV</a>
-            </nav>
+
+<body>
+  <!--Main/First Section-->
+  <div id="main">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://github.com/Abhaykush584/Projects-Report.git">Projects-Reports</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://github.com/Abhaykush584/Projects-Dashboards.git">Projects-Dashboards</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
         </div>
+      </nav>
     </header>
-    <div class="container mx-auto px-4 py-12">
-        <div class="flex flex-col items-center text-center">
-            <div class="w-40 h-40 rounded-full mb-6 flex items-center justify-center text-gray-600">
-                <i class="fas fa-user fa-3x"></i>
-            </div>
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Welcome to my portfolio!</h2>
-            <p class="text-lg max-w-lg">
-                I am a dedicated and passionate data analyst with a knack for uncovering hidden patterns and valuable insights. With my technical expertise, analytical mindset, and strong communication skills, I am poised to make a significant impact in the field of data analysis. Thank you for taking the time to learn more about me. I look forward to connecting and collaborating on exciting data-driven projects in the future!
-            </p>
-        </div>
-        <section id="projects" class="mt-12">
-            <h2 class="text-3xl font-semibold text-gray-800 mb-8 text-center">Projects</h2>
-            <div class="flex flex-col space-y-6">
-                <a href="https://github.com/Abhaykush584/Weather-Data-Analytics-Forecasting-Pipeline.git" target="_blank" class="project-card glassmorphic rounded-lg p-4 cursor-pointer fade-in" style="background-image: url('https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
-                    <h3 class="text-xl font-bold text-white">WeatherSense System</h3>
-                    <p class="text-gray-200">Real-time weather data pipeline with OpenWeatherMap API, PostgreSQL storage, Pandas EDA, and Tableau dashboard. Planned ML for alerts.</p>
-                </a>
-                <a href="https://github.com/Abhaykush584/Stock-trading-Recommending-System-via-Peak-Valley-Algorithm.git" target="_blank" class="project-card glassmorphic rounded-lg p-4 cursor-pointer fade-in" style="background-image: url('https://images.unsplash.com/photo-1516321310764-8d9c6340d4d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
-                    <h3 class="text-xl font-bold text-white">Stock Trading Recommendation System</h3>
-                    <p class="text-gray-200">
-A machine learning-driven trading platform for AAPL, featuring real-time price predictions, automated buy/sell signals, portfolio tracking, and an interactive Streamlit dashboard with light/dark mode, profit margin charts, stock holdings, and performance metrics.</p>
-                </a>
-                <a href="https://github.com/yourusername/sqltableau" target="_blank" class="project-card glassmorphic rounded-lg p-4 cursor-pointer fade-in" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
-                    <h3 class="text-xl font-bold text-white">Personal Portfolio</h3>
-                    <p class="text-gray-200">Showcasing My experience and my working through this portofio based on frontend skills and interactive bootstrap .</p>
-                </a>
-            </div>
-        </section>
-        <section id="socials" class="mt-12 text-center">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Socials</h2>
-            <div class="flex justify-center space-x-4">
-                <a href="mailto:your.email@example.com" class="glassmorphic px-4 py-2 rounded-lg hover:bg-blue-500"><i class="fas fa-envelope"></i> Email</a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="glassmorphic px-4 py-2 rounded-lg hover:bg-blue-500"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://twitter.com/yourhandle" target="_blank" class="glassmorphic px-4 py-2 rounded-lg hover:bg-blue-500"><i class="fab fa-twitter"></i> Twitter</a>
-            </div>
-        </section>
+    <h1 id="name">Abhay Kush</h1>
+    <h2 class="line-1 anim-typewriter">Data-Driven Developer</h2>
+  </div>
+
+  <div id="about">
+    <div class="container">
+      <h1 class="text-center aboutHeading">About Me</h1>
+      <p class="aboutPG text-center">I'm a Data Analyst enthusiast with a growing interest in Machine Learning and AI. I enjoy solving real-world problems through data-driven insights and practical analysis. Alongside analytics, I have a strong passion for development and love building clean, functional, and visually appealing user interfaces using frontend technologies. Always eager to learn and create, I aim to combine logic with creativity in everything I do.</p>
     </div>
-    <script>
-        function handleSubmit() {
-            alert("Thank you for your message! I'll get back to you soon.");
-            document.querySelector('.contact-form').reset();
-        }
-    </script>
+  </div>
+
+  <!--Projects Section-->
+  <div id="projects">
+    <div class="container">
+      <h1 class="text-center aboutHeading">Projects</h1>
+      <div class="row pt-5 m-auto" id="projectCards">
+        <!-- WeatherSense System -->
+        <div class="col-md-6 col-lg-4 pb-3">
+          <div class="card card-custom bg-white border-white border-0">
+            <div class="card-custom-img" id="project1"></div>
+            <a href="https://github.com/Abhaykush584/Weather-Data-Analytics-Forecasting-Pipeline.git" target="_blank" class="grow">
+              <div class="card-custom-avatar">
+                <img class="img-fluid" src="https://res.cloudinary.com/dcl67luxn/image/upload/v1543875011/3.png" alt="Avatar" />
+              </div>
+            </a>
+            <div class="card-body" style="overflow-y: auto">
+              <h4 class="card-title">WeatherSense System</h4>
+              <p class="card-text">Real-time weather data pipeline using Open-Meteo API, PostgreSQL, and Tableau. Includes EDA with Pandas and ML-based forecasting pipeline.</p>
+            </div>
+            <div class="card-footer" style="background: inherit; border-color: inherit;">
+              <a href="https://github.com/Abhaykush584/Weather-Data-Analytics-Forecasting-Pipeline.git" class="btn btn-info" target="_blank">View Repo</a>
+              <a href="https://github.com/Abhaykush584/Projects-Dashboards.git" class="btn btn-outline-primary" target="_blank">Dashboard</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stock Trading Recommendation System -->
+        <div class="col-md-6 col-lg-4 pb-3">
+          <div class="card card-custom bg-white border-white border-0">
+            <div class="card-custom-img" id="project2"></div>
+            <a href="https://github.com/Abhaykush584/Stock-trading-Recommending-System-via-Peak-Valley-Algorithm.git" target="_blank" class="grow">
+              <div class="card-custom-avatar">
+                <img class="img-fluid" src="https://res.cloudinary.com/dcl67luxn/image/upload/v1543875011/4.png" alt="Avatar" />
+              </div>
+            </a>
+            <div class="card-body" style="overflow-y: auto">
+              <h4 class="card-title">Stock Trading Recommendation System</h4>
+              <p class="card-text">ML-based AAPL stock trading tool with automated signal generation, real-time metrics, performance dashboard, and profit/loss tracking via Streamlit.</p>
+            </div>
+            <div class="card-footer" style="background: inherit; border-color: inherit;">
+              <a href="https://github.com/Abhaykush584/Stock-trading-Recommending-System-via-Peak-Valley-Algorithm.git" class="btn btn-info" target="_blank">View Repo</a>
+              <a href="https://stock-trading-recommending-system-via-peak-valley-algorithm-li.streamlit.app/" class="btn btn-outline-primary" target="_blank">Live</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Portfolio -->
+        <div class="col-md-6 col-lg-4 pb-3">
+          <div class="card card-custom bg-white border-white border-0">
+            <div class="card-custom-img" id="portfolio"></div>
+            <a href="https://github.com/Abhaykush584/sqltableau" target="_blank">
+              <div class="card-custom-avatar">
+                <img class="img-fluid" src="https://res.cloudinary.com/dcl67luxn/image/upload/v1543875011/2.png" alt="Avatar" />
+              </div>
+            </a>
+            <div class="card-body" style="overflow-y: auto">
+              <h4 class="card-title">Personal Portfolio</h4>
+              <p class="card-text">My responsive portfolio with Bootstrap, project links this Demonstrates my technical background and frontend skills.</p>
+            </div>
+            <div class="card-footer" style="background: inherit; border-color: inherit;">
+              <a href="https://github.com/Abhaykush584/Personal-Portfolio.git" class="btn btn-info" target="_blank">View Repo</a>
+              <a href="https://abhaykush584.github.io/Personal-Portfolio/" class="btn btn-outline-primary" target="_blank">Live</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Contact Section-->
+  <div id="contact">
+    <div class="container">
+      <h1 class="text-center aboutHeading">Contact Me</h1>
+      <form>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Name</label>
+          <input type="text" class="form-control" id="formGroupExampleInput">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Email address</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Message</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-info mb-2" id="button">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!--Footer-->
+  <footer class="footer">
+    <div class="container text-center">
+      <span class="footer-text">Copyright &copy; 2025 | All Rights Reserved</span>
+    </div>
+  </footer>
+
+  <!--Bootstrap JS-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
+
